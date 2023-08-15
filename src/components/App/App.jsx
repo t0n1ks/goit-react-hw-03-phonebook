@@ -38,6 +38,11 @@ class App extends Component {
       return;
     }
 
+    if (contacts.some(contact => contact.number.toLowerCase() === number.toLowerCase())) {
+      alert(`${number} already in the contact list!`);
+      return;
+    }
+
     const newContact = {
       id: shortid.generate(),
       name,
